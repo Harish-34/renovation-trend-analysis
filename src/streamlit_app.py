@@ -31,9 +31,9 @@ st.write(f"### Currently Viewing: {option}")
 # ✅ Load All Data at Once
 @st.cache_data
 def load_all_data():
-    df_cleaned = pd.read_csv("../data/processed_data/apartment_cleaned.csv")
-    df_topics = pd.read_csv("../data/processed_data/apartment_with_topics.csv")
-    df_clusters = pd.read_csv("../data/processed_data/apartment_cluster_labeled.csv")
+    df_cleaned = pd.read_csv("data/processed_data/apartment_cleaned.csv")
+    df_topics = pd.read_csv("data/processed_data/apartment_with_topics.csv")
+    df_clusters = pd.read_csv("data/processed_data/apartment_cluster_labeled.csv")
     return df_cleaned, df_topics, df_clusters
 
 df_cleaned, df_topics, df_clusters = load_all_data()
@@ -107,8 +107,8 @@ elif option == "Predictions":
     if st.button("🔍 Predict Category and Estimate Cost"):
         try:
             # Load models
-            model_cat = joblib.load("../models/renovation_cluster_model.pkl")
-            model_cost = joblib.load("../models/cost_predictor_rf.pkl")
+            model_cat = joblib.load("models/renovation_cluster_model.pkl")
+            model_cost = joblib.load("models/cost_predictor_rf.pkl")
 
             # Predict cluster/category
             predicted_cluster = model_cat.predict([job_text])[0]
