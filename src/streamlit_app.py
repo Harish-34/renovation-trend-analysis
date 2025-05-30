@@ -49,7 +49,7 @@ def load_all_data():
     df_topics = pd.read_csv("data/processed_data/apartment_with_topics.csv")
     df_clusters = pd.read_csv("data/processed_data/apartment_cluster_labeled.csv")
     df_cost = df_cleaned[df_cleaned['Initial Cost'].notna()]
-    return df_cleaned, df_topics, df_clusters
+    return df_raw_data, df_cleaned, df_topics, df_clusters, df_cost
 
 df_raw_data, df_cleaned, df_topics, df_clusters, df_cost= load_all_data()
 
