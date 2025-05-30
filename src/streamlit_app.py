@@ -53,6 +53,9 @@ def load_all_data():
 
 df_raw_data, df_cleaned, df_topics, df_clusters, df_cost= load_all_data()
 
+# ✅ Ensure datetime format
+df_cleaned['Fully Permitted'] = pd.to_datetime(df_cleaned['Fully Permitted'], errors='coerce')
+
 # ✅ Sections
 if option == "Problem Statement":
     st.title("📌 Problem Statement")
@@ -187,7 +190,6 @@ elif option == "EDA":
     kpi1, kpi2, kpi3, kpi4 = st.columns(4)
     kpi1.metric("💰 Total Declared Cost", f"${df_cost['Initial Cost'].sum():,.0f}")
     kpi2.metric("📄 Total Permits", df_cleaned['Fully Permitted'].notna().sum())
-    df_cleaned['Fully Permitted'] = pd.to_datetime(df_cleaned['Fully Permitted'], errors='coerce')
     kpi3.metric("📅 Most Active Year", df_cleaned['Fully Permitted'].dt.year.value_counts().idxmax())
     kpi4.metric("🏙️ Top Borough", df_cleaned['Borough'].value_counts().idxmax())
 
