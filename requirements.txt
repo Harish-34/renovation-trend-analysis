@@ -1,6 +1,11 @@
+streamlit
 pandas
 numpy
 seaborn
+plotly
+statsmodels
 scikit-learn==1.3.2
+wordcloud
 joblib
-streamlit
+Pillow
+
