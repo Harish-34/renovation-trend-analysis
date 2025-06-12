@@ -146,6 +146,6 @@ renovation-trend-analysis/
 ## 🙋‍♀️ Author
 
 **Harish Chowdary**  
-💼 [LinkedIn](www.linkedin.com/in/harish-chowdary)  
+💼 [LinkedIn](https://www.linkedin.com/in/harish-chowdary)  
 🌐 [Live App](https://nyc9construction9rennovation9trend9analysis.streamlit.app/)
 
